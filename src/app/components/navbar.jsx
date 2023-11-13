@@ -10,17 +10,20 @@ export default function Navbar() {
           <Image src={logo} alt="Logo" width={60} height={60} />
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="/home">
+          <Link href="/">
             Home
           </Link>
-          <Link href="/about">
-            About
+          <Link href="/shop">
+            Shop
           </Link>
-          <Link href="/about/us">
-            About Us
+          <Link href="/blog">
+            Blog
           </Link>
-          <Link href="/about/someone">
-            About Someone
+          <Link href="/services">
+            Services
+          </Link>
+          <Link href="/repairAccount">
+            Repair Account
           </Link>
         </div>
       </div>
