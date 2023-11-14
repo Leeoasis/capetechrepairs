@@ -11,10 +11,10 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'custom-image': 'url("/board.jpeg")',
+        'custom-image': 'url("/newboard.jpg")',
       },
       backgroundColor: {
-        'overlay': 'rgba(0, 0, 255, 0.6)',
+        'overlay': 'rgba(80, 144, 175, 0.8)',
       },
       zIndex: {
         '10': 10,
@@ -24,7 +24,11 @@ module.exports = {
         center: true,
       },
       colors: {
-        customGreen: 'rgba(255, 165, 0, 1)',
+        customPurple: ' rgba(175, 80, 144, 0.9)',
+        customDarkGreen: ' rgba(60, 290, 90, 1)',
+        customRed: 'rgba(255, 0, 0, 0.6)',
+        customOrange: 'rgba(255, 165, 0, 1)',
+        customBlue: 'rgba(5, 19, 125, 0.8)',
       },
     
     },
