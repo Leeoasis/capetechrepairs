@@ -27,7 +27,7 @@ module.exports = {
         customPurple: ' rgba(175, 80, 144, 0.9)',
         customDarkGreen: ' rgba(60, 290, 90, 1)',
         customRed: 'rgba(255, 0, 0, 0.6)',
-        customOrange: 'rgba(255, 165, 0, 1)',
+        customYellow: 'rgba(255, 165, 0, 1)',
         customBlue: 'rgba(5, 19, 125, 0.8)',
       },
     

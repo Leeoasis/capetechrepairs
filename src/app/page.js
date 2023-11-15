@@ -1,6 +1,7 @@
 import Link from "next/link";
 // import Slider from "../app/components/Slider";
 import ContactForm from "../app/components/contactForm";
+import Maps from "./components/map";
 function Home() {
   return (
     <div className="container">
@@ -139,6 +140,7 @@ function Home() {
               <li>147 Voortrekker RD Bellville, Cape-town </li>
               <li>Sunday-Friday – 9 AM to 6 PM</li>
             </ul>
+            <Maps />
           </div>
           <div className="shadow-md p-4 bg-customBlue">
             <p>Get in touch with us via Email,

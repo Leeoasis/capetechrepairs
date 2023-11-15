@@ -4,7 +4,7 @@ import logo from '../assets/images/capelogo.jpg';
 
 export default function Navbar() {
   return (
-    <div className="bg-customPurple p-4">
+    <div className="bg-customPurple p-4 text-black">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Image src={logo} alt="Logo" width={60} height={60} />
