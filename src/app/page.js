@@ -1,5 +1,5 @@
 import Link from "next/link";
-// import Slider from "../app/components/Slider";
+// import Carousel from "../app/components/slider";
 import ContactForm from "../app/components/contactForm";
 import Maps from "./components/map";
 function Home() {
@@ -126,6 +126,7 @@ function Home() {
         <h2 className="font-bold text-center">
           Store
         </h2>
+        {/* <Carousel /> */}
       </div>
       <div className="bg-customPurple mt-4 mb-8">
         <h2 className="font-bold text-center">
