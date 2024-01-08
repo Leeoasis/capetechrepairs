@@ -2,11 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Services() {
   const cardStyle = {
-    width: '18rem'
+    width: '36rem'
   };
 
   return (
-    <div className="card" style={cardStyle}>
+    <div className="card" style={cardStyle} mt-4>
       <img src="..." className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
