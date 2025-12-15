@@ -1,158 +1,264 @@
 import Link from "next/link";
-// import Carousel from "../app/components/slider";
 import ContactForm from "../app/components/contactForm";
 import Maps from "./components/map";
-function Home() {
+
+export default function Home() {
   return (
-    <div className="container">
-      <h2 className="text-3xl font-bold mt-4 mb-8">Home</h2>
-      <div className="container relative bg-custom-image mb-4">
-        <div className="absolute inset-0 bg-overlay z-10"></div>
-        <h1 className="z-20 relative font-extrabold bg-customBlue text-customDarkGreen text-3xl ml-2 mr-2 mb-8 mt-8 text-center">Laptop, Phone, TV, Desktop, Console, Monitor, Gaming PCs/Laptops & more</h1>
-        <div className="grid grid-cols-2 gap-12 ml-4 z-20 relative">
-          <div className="bg-customBlue mr-2 p-4 shadow-md rounded-md">
-            <h2 className="text-white font-bold">QUALITY REPAIRS (warranty !!!!)</h2>
-          </div>
-          <div className="bg-customBlue p-4 mr-2 shadow-md rounded-md">
-            <h2 className="text-white font-bold">UPGRADES & UPDATES (trade ins)</h2>
-          </div>
-          <div className="bg-customBlue p-4 shadow-md rounded-md">
-            <ul className="text-white">
-              <li className="mb-4">We have professional technicians guaranteed to repair you devices properly and reliably.</li>
-              <li className="mb-4">Our Crew is equipped with proper and adequate tools and equipment to ensure repairs are done without compromise.</li>
-              <li>Experienced technicians guarantee less waiting time while maintaining quality of the repair.</li>
-            </ul>
-          </div>
-          <div className="bg-customBlue mr-2 p-4 shadow-md rounded-md">
-            <ul className="text-white">
-              <li className="mb-4">Feel free to get a free quote on what is best for your system between update and upgrade.</li>
-              <li className="mb-4">We have options to trade in devices to help lower the cost of upgrades.</li>
-              <li className="mb-4">Most relevant updates are offered so as to maintain system performance.</li>
-            </ul>
-          </div>
-          <div className="mb-4">
-            <Link href="/quote" legacyBehavior>
-              <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Get a Free Quote
-              </a>
+    <main className="bg-neutral-100 text-neutral-900">
+
+      {/* ================= HERO (UNCHANGED – GOLD STANDARD) ================= */}
+      <section className="relative text-white">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/images/repair-hero.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-black/65" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 py-28 text-center">
+          <p className="uppercase tracking-widest text-green-400 mb-4">
+            Repairs • Sales • Refurbished • Audio • Gaming
+          </p>
+
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+            Professional Electronics Repair
+            <br />
+            Done Properly
+          </h1>
+
+          <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral-200 mb-10">
+            Component-level repair and carefully selected devices for sale.
+            Honest diagnostics. No unnecessary replacements.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/quote"
+              className="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-xl font-bold text-black text-lg"
+            >
+              Book a Repair
+            </Link>
+
+            <Link
+              href="/shop"
+              className="bg-white/90 hover:bg-white px-10 py-4 rounded-xl font-bold text-neutral-900 text-lg"
+            >
+              View Devices for Sale
             </Link>
           </div>
+
+          <p className="mt-8 text-sm text-neutral-300">
+            Bellville walk-in store • Nationwide courier repairs & sales
+          </p>
+        </div>
+      </section>
+
+      {/* ================= SOCIAL PROOF (SPLIT EVIDENCE) ================= */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+
+          {/* TEXT */}
           <div>
-            <Link href="/contact" legacyBehavior>
-              <a className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Get in Touch
+            <h2 className="text-4xl font-extrabold mb-6">
+              Real Work. Real Proof.
+            </h2>
+
+            <p className="text-neutral-600 text-lg leading-relaxed mb-10">
+              We document our repairs publicly — live diagnostics, board-level work,
+              and final testing. You can see exactly how we work before trusting us
+              with your device.
+            </p>
+
+            <div className="flex flex-col gap-4 text-lg font-semibold">
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-600 hover:underline"
+              >
+                ▶ Watch real repairs on YouTube
               </a>
-            </Link>
+
+              <a href="#reviews" className="text-green-600 hover:underline">
+                ★ Read verified customer reviews
+              </a>
+            </div>
           </div>
-          <h2 className="font-bold text-customDarkGreen text-2xl mb-8 bg-customBlue ">Visit Our store (Bellville, Capetown) or Courier in your device and we will fix your problem.</h2>
-        </div>
-      </div>
-      <div className="grid grid-cols-4 gap-4 ml-6">
-        <div className="bg-customPurple p-4 mt-4 mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 ">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-        </svg>
+
+          {/* IMAGE */}
+          <div className="relative h-[420px] rounded-2xl overflow-hidden">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url('/images/repair-still-1.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div className="absolute inset-0 bg-black/35" />
+          </div>
 
         </div>
-        <div className="bg-customPurple p-4 mt-4 mb-4"> 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"className="w-12 h-12 ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-</svg>
+      </section>
+
+      {/* ================= WHAT WE DO (REPAIRS + SALES) ================= */}
+      <section className="py-32 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
+
+          {/* IMAGE */}
+          <div className="relative h-[460px] rounded-2xl overflow-hidden order-last md:order-first">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url('/images/repair-still-2.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+
+          {/* TEXT */}
+          <div>
+            <h2 className="text-4xl font-extrabold mb-10">
+              What We Do
+            </h2>
+
+            <div className="grid gap-12 text-lg text-neutral-700">
+              <div>
+                <h3 className="font-bold text-xl mb-4">Repairs</h3>
+                <ul className="space-y-3">
+                  <li>• Laptops & desktop computers</li>
+                  <li>• TVs (LED, OLED, QLED)</li>
+                  <li>• Gaming consoles</li>
+                  <li>• HDMI, charging & power faults</li>
+                  <li>• Audio equipment & amplifiers</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-xl mb-4">Sales</h3>
+                <ul className="space-y-3">
+                  <li>• Refurbished laptops & desktops</li>
+                  <li>• Custom-built PCs & gaming systems</li>
+                  <li>• Monitors, TVs & displays</li>
+                  <li>• Parts & upgrades</li>
+                </ul>
+
+                <div className="mt-6">
+                  <Link
+                    href="/shop"
+                    className="text-green-600 font-semibold hover:underline"
+                  >
+                    Browse available devices →
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-14">
+              <Link
+                href="/quote"
+                className="inline-block bg-green-500 hover:bg-green-600 px-10 py-4 rounded-xl font-bold text-black text-lg"
+              >
+                Get a Repair Quote
+              </Link>
+            </div>
+          </div>
 
         </div>
-        <div className="bg-customPurple p-4 mt-4 mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"className="w-12 h-12 ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-</svg>
-</div>
-        <div className="bg-customPurple p-4 mt-4 mb-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"className="w-12 h-12 ">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
-</svg>
-</div>
-        <div className="mb-4">
-          <h2 className="font-bold">Tools & Parts</h2>
+      </section>
+
+      {/* ================= HOW IT WORKS (PROCESS EVIDENCE) ================= */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+
+          {/* TEXT */}
+          <div>
+            <h2 className="text-4xl font-extrabold mb-10">
+              How It Works
+            </h2>
+
+            <div className="space-y-8 text-neutral-700 text-lg">
+              <div>
+                <p className="text-green-600 font-bold text-sm mb-1">STEP 1</p>
+                <p className="font-bold">Book or visit</p>
+                <p>Walk in or arrange courier collection.</p>
+              </div>
+
+              <div>
+                <p className="text-green-600 font-bold text-sm mb-1">STEP 2</p>
+                <p className="font-bold">Diagnosis & approval</p>
+                <p>We assess the device and contact you before repair.</p>
+              </div>
+
+              <div>
+                <p className="text-green-600 font-bold text-sm mb-1">STEP 3</p>
+                <p className="font-bold">Repair or replace</p>
+                <p>Device repaired, tested, or replaced if necessary.</p>
+              </div>
+            </div>
+
+            <div className="mt-14">
+              <Link
+                href="/quote"
+                className="bg-green-500 hover:bg-green-600 px-10 py-4 rounded-xl font-bold text-black text-lg"
+              >
+                Book a Repair Now
+              </Link>
+            </div>
+          </div>
+
+          {/* IMAGE */}
+          <div className="relative h-[460px] rounded-2xl overflow-hidden">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url('/images/repair-still-3.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+            <div className="absolute inset-0 bg-black/35" />
+          </div>
+
         </div>
-        <div>
-          <h2 className="font-bold">Motherboard Repairs</h2>
-        </div>
-        <div>
-          <h2 className="font-bold">Gaming Setups</h2>
-        </div>
-        <div>
-        <h2 className="font-bold">Courier/Mail in your Device</h2>
-        </div>
-        <div>
-          <p>We sell Tried, Approved and  Recommended tools and parts for all your repairs tech-related</p>
-        </div>
-        <div>
-        <p>Technicians can bring or mail in motherboards for repair and refurbishment at affordable prices</p>
-        </div>
-        <div>
-        <p>We build custom made gaming setups as well as upgrade and maintenance of your systems</p>
-        </div>
-        <div>
-        <p>Our Delivery System will ensure that you get your problems fixed at the comfort of your house without having to worry about travel times and costs</p>
-        </div>
-        <div className="mb-8">
-        <Link href="/quote" legacyBehavior>
-              <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Parts
-              </a>
-            </Link>
-        </div>
-        <div>
-        <Link href="/quote" legacyBehavior>
-              <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Tech Support
-              </a>
-            </Link>
-        </div>
-        <div>
-        <Link href="/quote" legacyBehavior>
-              <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Gamers
-              </a>
-            </Link>
-        </div>
-        <div>
-        <Link href="/quote" legacyBehavior>
-              <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-20 relative">
-                Mail-In
-              </a>
-            </Link>
-        </div>
-      </div>
-      <div className="bg-customPurple mt-4">
-        <h2 className="font-bold text-center">
-          Store
-        </h2>
-        {/* <Carousel /> */}
-      </div>
-      <div className="bg-customPurple mt-4 mb-8">
-        <h2 className="font-bold text-center">
-          Contact Us
-        </h2>
-      </div>
-      <div className="grid grid-cols-2 gap-4 mb-8">
-          <div className="shadow-md p-4 bg-customBlue">
-            <p>Call or Visit Us</p>
-            <ul>
-              <li>0648188737</li>
-              <li>147 Voortrekker RD Bellville, Cape-town </li>
-              <li>Sunday-Friday – 9 AM to 6 PM</li>
+      </section>
+
+      {/* ================= CONTACT (HUMAN CLOSE) ================= */}
+      <section className="py-32 bg-neutral-50" id="reviews">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+          <div>
+            <h2 className="text-4xl font-extrabold mb-6">
+              Visit or Contact Us
+            </h2>
+            <p className="text-neutral-600 mb-10 max-w-md">
+              Whether you need a repair or a replacement device,
+              we’ll guide you honestly.
+            </p>
+
+            <ul className="space-y-4 text-neutral-700 mb-10">
+              <li>📞 064 818 8737</li>
+              <li>📍 147 Voortrekker Rd, Bellville, Cape Town</li>
+              <li>🕘 Sunday–Friday: 9:00 – 18:00</li>
             </ul>
+
             <Maps />
           </div>
-          <div className="shadow-md p-4 bg-customBlue">
-            <p>Get in touch with us via Email,
-              Call, Whatsapp, Facebook or
-              walk into Our store.
-              We would love to hear from you</p>
-              <ContactForm />
+
+          <div className="bg-white rounded-2xl p-12">
+            <h3 className="text-2xl font-bold mb-8">
+              Send Us a Message
+            </h3>
+            <ContactForm />
           </div>
-      </div>
-    </div>
+        </div>
+      </section>
+
+    </main>
   );
 }
-
-export default Home;
