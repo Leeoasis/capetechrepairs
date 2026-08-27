@@ -1,36 +1,3 @@
-const ContactForm = () => {
-  return (
-    <form className="w-full max-w-lg">
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full px-3">
-          <input id="name" type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" placeholder="Your Name" />
-        </div>
-      </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full px-3">
-          <input id="email" type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" placeholder="Your Email" />
-        </div>
-      </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full px-3">
-          <input id="contact" type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" placeholder="Contact No" />
-        </div>
-      </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full px-3">
-          <input id="description" type="textArea" className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-8 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" placeholder="Your message" />
-        </div>
-      </div>
-      <div className="md:flex md:items-center">
-        <div className="md:w-1/3">
-          <button className="shadow bg-blue-500 hover:bg-blue-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-            Send Message
-          </button>
-        </div>
-        <div className="md:w-2/3"></div>
-      </div>
-    </form>
-  );
-};
-
-export default ContactForm;
+'use client';
+import {useState} from 'react';
+export default function ContactForm(){const[data,setData]=useState({name:'',phone:'',device:'',message:''});const change=e=>setData({...data,[e.target.name]:e.target.value});const submit=e=>{e.preventDefault();const text=`Hi Cape Tech, I'm ${data.name}.\n\nDevice: ${data.device}\nProblem: ${data.message}\nContact: ${data.phone}`;window.open(`https://wa.me/27648188737?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer')};return <form onSubmit={submit}><h2 className="text-2xl font-extrabold">Repair enquiry</h2><p className="mt-2 text-sm text-slate-500">This opens a pre-filled WhatsApp message to the workshop.</p><div className="mt-7 grid gap-5 sm:grid-cols-2"><label className="text-sm font-bold">Your name<input className="field mt-2" name="name" value={data.name} onChange={change} required placeholder="Jane Smith"/></label><label className="text-sm font-bold">Phone number<input className="field mt-2" name="phone" value={data.phone} onChange={change} required placeholder="082 000 0000" inputMode="tel"/></label></div><label className="mt-5 block text-sm font-bold">Device<input className="field mt-2" name="device" value={data.device} onChange={change} required placeholder="e.g. PlayStation 5"/></label><label className="mt-5 block text-sm font-bold">What went wrong?<textarea className="field mt-2 min-h-36 resize-y" name="message" value={data.message} onChange={change} required placeholder="Describe the symptoms, damage or error message…"/></label><button className="mt-6 w-full rounded-lg bg-[#b7f34a] px-7 py-4 font-extrabold text-[#07111f] hover:bg-[#07111f] hover:text-white">Send via WhatsApp →</button><p className="mt-4 text-center text-xs text-slate-400">We’ll only use these details to respond to your enquiry.</p></form>}
