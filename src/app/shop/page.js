@@ -46,7 +46,7 @@ export default function Shop() {
         imageAlt="Electronic components arranged neatly for inspection"
         note="Laptops · Desktops · Gaming · Displays · Parts"
       />
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-5 md:grid-cols-2">
             {categories.map(([title, text, n]) => (
@@ -70,7 +70,7 @@ export default function Shop() {
           </div>
         </div>
       </section>
-      <section className="bg-[#eafbc9] py-20">
+      <section className="bg-[#eafbc9] py-16 md:py-20">
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="eyebrow mb-4 text-[#668d1f]">How we sell</p>
@@ -104,7 +104,7 @@ export default function Shop() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="shell grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
             <p className="section-kicker">Before you buy</p>
@@ -130,7 +130,7 @@ export default function Shop() {
           </div>
         </div>
       </section>
-      <section className="shop-cta py-20 text-center text-white">
+      <section className="shop-cta py-16 text-center text-white md:py-20">
         <div className="shell">
           <h2 className="section-title">Looking for something specific?</h2>
           <p className="mx-auto mt-4 max-w-xl text-slate-300">

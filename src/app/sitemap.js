@@ -3,6 +3,11 @@ export default function sitemap() {
   return [
     ["", "weekly", 1],
     ["/services", "monthly", 0.9],
+    ["/services/laptop-computer-repair", "monthly", 0.85],
+    ["/services/tv-monitor-repair", "monthly", 0.85],
+    ["/services/gaming-console-repair", "monthly", 0.85],
+    ["/services/audio-equipment-repair", "monthly", 0.8],
+    ["/services/board-level-repair", "monthly", 0.85],
     ["/quote", "monthly", 0.9],
     ["/shop", "weekly", 0.8],
     ["/about", "monthly", 0.6],

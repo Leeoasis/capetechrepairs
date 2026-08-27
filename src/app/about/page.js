@@ -25,13 +25,13 @@ export default function About() {
         imageAlt="Electronics technician working carefully on a circuit board"
         note="10+ years · Five specialists · Thousands of repairs"
       />
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="shell grid gap-16 lg:grid-cols-2 lg:items-center">
           <Image
-            src="/images/workbench.jpg"
+            src="/images/technician-work.jpg"
             width={700}
             height={520}
-            alt="Cape Tech electronics workbench"
+            alt="Precision microscope used for detailed electronics repair"
             className="h-[500px] w-full rounded-2xl object-cover"
           />
           <div>
@@ -67,7 +67,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
             <div>

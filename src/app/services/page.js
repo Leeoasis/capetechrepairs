@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "../components/Icons";
 import PageHero from "../components/PageHero";
+import BookingConfidence from "../components/BookingConfidence";
 export const metadata = {
   title: "Electronics Repair Services in Cape Town",
   description:
@@ -19,6 +20,7 @@ const items = [
   [
     "laptop",
     "Laptop & desktop repair",
+    "laptop-computer-repair",
     [
       "No power / no display",
       "Slow performance & upgrades",
@@ -29,6 +31,7 @@ const items = [
   [
     "tv",
     "TV & monitor repair",
+    "tv-monitor-repair",
     [
       "Backlight failures",
       "Power supply faults",
@@ -39,6 +42,7 @@ const items = [
   [
     "game",
     "Console repair",
+    "gaming-console-repair",
     [
       "HDMI port replacement",
       "Overheating & cleaning",
@@ -49,6 +53,7 @@ const items = [
   [
     "audio",
     "Audio equipment",
+    "audio-equipment-repair",
     [
       "Amplifiers & receivers",
       "Powered speakers",
@@ -59,6 +64,7 @@ const items = [
   [
     "tool",
     "Board-level repair",
+    "board-level-repair",
     [
       "Microsoldering",
       "Charging ports",
@@ -80,7 +86,7 @@ export default function Services() {
       />
       <section className="section-space">
         <div className="shell grid gap-6 md:grid-cols-2">
-          {items.map(([icon, title, list]) => (
+          {items.map(([icon, title, slug, list]) => (
             <article
               key={title}
               className={`surface-card ${title === "Board-level repair" ? "md:col-span-2" : ""}`}
@@ -101,6 +107,9 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+              <Link href={`/services/${slug}`} className="mt-7 inline-flex font-extrabold underline decoration-[#b7f34a] decoration-4 underline-offset-8">
+                Explore this service →
+              </Link>
             </article>
           ))}
         </div>
@@ -220,6 +229,7 @@ export default function Services() {
           </div>
         </div>
       </section>
+      <BookingConfidence />
       <section className="services-cta section-space text-white">
         <div className="shell">
           <div className="max-w-2xl">

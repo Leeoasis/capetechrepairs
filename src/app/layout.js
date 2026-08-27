@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import StructuredData from "./components/StructuredData";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import MobileContactBar from "./components/MobileContactBar";
 
 const manrope = Manrope({ subsets: ["latin"], display: "swap" });
 const description =
@@ -163,6 +164,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div id="main-content">{children}</div>
         <WhatsAppWidget />
+        <MobileContactBar />
         <Footer />
       </body>
     </html>

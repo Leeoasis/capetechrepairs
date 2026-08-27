@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PageHero({
   eyebrow,
@@ -7,26 +8,42 @@ export default function PageHero({
   image,
   imageAlt,
   note,
+  primaryLabel = "Book a repair →",
+  primaryHref = "/quote",
+  secondaryLabel = "Ask on WhatsApp",
+  secondaryHref = "https://wa.me/27648188737?text=Hi%20Cape%20Tech%20Repairs%2C%20I%20need%20help%20with%20a%20device.",
+  compactMobile = false,
 }) {
   return (
     <section className="relative overflow-hidden bg-[#07111f] text-white">
       <div className="absolute inset-0 grid-noise" />
-      <div className="shell relative grid min-h-[560px] items-stretch lg:grid-cols-[1.08fr_.92fr]">
-        <div className="flex items-center py-20 pr-0 md:py-24 lg:pr-16">
+      <div className={`shell relative grid items-stretch lg:min-h-[560px] lg:grid-cols-[1.08fr_.92fr] ${compactMobile ? "" : "min-h-[560px]"}`}>
+        <div className={`flex items-center pr-0 lg:pr-16 ${compactMobile ? "py-14 md:py-20" : "py-16 md:py-24"}`}>
           <div>
             <p className="eyebrow mb-6 text-[#b7f34a]">{eyebrow}</p>
             <h1 className="display max-w-3xl">{title}</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
               {description}
             </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href={primaryHref} className="btn-primary">
+                {primaryLabel}
+              </Link>
+              <a
+                href={secondaryHref}
+                className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-4 font-extrabold hover:bg-white/10"
+              >
+                {secondaryLabel}
+              </a>
+            </div>
             {note && (
-              <p className="mt-8 inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-slate-300">
+              <p className="mt-6 inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-slate-300">
                 {note}
               </p>
             )}
           </div>
         </div>
-        <div className="relative min-h-[360px] lg:min-h-full">
+        <div className={`relative lg:min-h-full ${compactMobile ? "hidden lg:block" : "min-h-[320px]"}`}>
           <Image
             src={image}
             alt={imageAlt}

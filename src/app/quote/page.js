@@ -1,5 +1,6 @@
 import ContactForm from "../components/contactForm";
 import PageHero from "../components/PageHero";
+import BookingConfidence from "../components/BookingConfidence";
 export const metadata = {
   title: "Book an Electronics Repair in Cape Town",
   description:
@@ -23,8 +24,13 @@ export default function Quote() {
         image="/images/diagnostics.jpg"
         imageAlt="Professional electronics diagnostics tools at a repair workbench"
         note="Fastest response via WhatsApp · 064 818 8737"
+        primaryLabel="Start your enquiry ↓"
+        primaryHref="#repair-form"
+        secondaryLabel="Call the workshop"
+        secondaryHref="tel:+27648188737"
+        compactMobile
       />
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="shell grid gap-12 lg:grid-cols-[1fr_1.3fr]">
           <aside>
             <h2 className="text-2xl font-extrabold">Visit or get in touch</h2>
@@ -71,12 +77,13 @@ export default function Quote() {
               </p>
             </div>
           </aside>
-          <div className="rounded-2xl border border-slate-200 bg-white p-7 md:p-10">
+          <div id="repair-form" className="scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-7 md:p-10">
             <ContactForm />
           </div>
         </div>
       </section>
-      <section className="bg-white py-20">
+      <BookingConfidence compact />
+      <section className="bg-white py-16 md:py-20">
         <div className="shell">
           <div className="text-center">
             <p className="section-kicker">What happens next</p>

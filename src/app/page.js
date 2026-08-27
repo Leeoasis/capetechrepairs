@@ -8,21 +8,25 @@ const services = [
     "laptop",
     "Computers",
     "Laptop and desktop faults, upgrades, data recovery and board repair.",
+    "/services/laptop-computer-repair",
   ],
   [
     "tv",
     "TVs & displays",
     "LED, OLED and QLED diagnostics, backlights, power and display faults.",
+    "/services/tv-monitor-repair",
   ],
   [
     "game",
     "Gaming",
     "PlayStation, Xbox and Nintendo HDMI, power, cooling and storage repairs.",
+    "/services/gaming-console-repair",
   ],
   [
     "audio",
     "Audio",
     "Amplifiers, speakers, mixers and other professional audio equipment.",
+    "/services/audio-equipment-repair",
   ],
 ];
 export default function Home() {
@@ -92,6 +96,17 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="border-b border-slate-200 bg-white py-5">
+        <div className="shell grid gap-4 text-sm sm:grid-cols-3 sm:items-center">
+          <a href="https://maps.google.com/?q=147+Voortrekker+Road+Bellville+Cape+Town" className="font-extrabold hover:text-[#668d1f]">
+            <span className="mr-2 text-[#668d1f]">●</span>147 Voortrekker Road, Bellville
+          </a>
+          <p className="font-bold text-slate-600 sm:text-center">Sunday–Friday · 09:00–18:00</p>
+          <a href="https://maps.google.com/?q=Cape+Tech+Repairs+147+Voortrekker+Road+Bellville" className="font-extrabold underline decoration-[#b7f34a] decoration-4 underline-offset-4 sm:text-right">
+            Check customer feedback on Google →
+          </a>
+        </div>
+      </section>
       <section className="section-space">
         <div className="shell">
           <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
@@ -109,7 +124,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(([icon, title, text], i) => (
+            {services.map(([icon, title, text, href], i) => (
               <article key={title} className="surface-card">
                 <span className="icon-tile mb-8">
                   <Icon name={icon} />
@@ -119,6 +134,7 @@ export default function Home() {
                 </span>
                 <h3 className="mt-2 text-xl font-extrabold">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
+                <Link href={href} className="mt-6 inline-flex text-sm font-extrabold underline decoration-[#b7f34a] decoration-4 underline-offset-8">Learn more →</Link>
               </article>
             ))}
           </div>

@@ -83,13 +83,47 @@ a {
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 16px 36px rgba(7, 17, 31, .34);
 }
+.mobile-contact-bar {
+  display: none;
+}
 @media (max-width: 639px) {
-  .whatsapp-widget__label {
+  body {
+    padding-bottom: calc(4.25rem + env(safe-area-inset-bottom));
+  }
+  .whatsapp-widget {
     display: none;
   }
-  .whatsapp-widget__icon {
-    width: 3.35rem;
-    height: 3.35rem;
+  .mobile-contact-bar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 60;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: .5rem;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    background: #07111f;
+    padding: .55rem max(.75rem, env(safe-area-inset-right)) calc(.55rem + env(safe-area-inset-bottom)) max(.75rem, env(safe-area-inset-left));
+    box-shadow: 0 -10px 30px rgba(7, 17, 31, .2);
+  }
+  .mobile-contact-bar a {
+    display: flex;
+    min-height: 3.15rem;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    border-radius: .65rem;
+    font-size: .82rem;
+    font-weight: 800;
+  }
+  .mobile-contact-bar__call {
+    border: 1px solid rgba(255, 255, 255, .22);
+    color: #fff;
+  }
+  .mobile-contact-bar__whatsapp {
+    background: #25d366;
+    color: #07111f;
   }
 }
 .shell {
@@ -180,7 +214,7 @@ a {
     @apply relative overflow-hidden bg-[#07111f] py-20 text-white md:py-24;
   }
   .section-space {
-    @apply py-20 md:py-24;
+    @apply py-16 md:py-24;
   }
   .surface-card {
     @apply rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 md:p-8;
