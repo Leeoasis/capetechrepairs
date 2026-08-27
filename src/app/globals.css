@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --ink: #07111f;
+  --lime: #b7f34a;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #f7f9fb;
+  color: var(--ink);
+}
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+a {
+  transition: 0.2s ease;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  border-radius: .5rem;
+  background: #b7f34a;
+  padding: .75rem 1rem;
+  font-weight: 800;
+  color: #07111f;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+.whatsapp-widget {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  color: #fff;
+}
+.whatsapp-widget__label {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: .65rem;
+  background: #07111f;
+  padding: .7rem .85rem;
+  box-shadow: 0 12px 30px rgba(7, 17, 31, .2);
+  font-size: .75rem;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateX(.5rem);
+  transition: opacity .2s ease, transform .2s ease;
+}
+.whatsapp-widget__icon {
+  display: grid;
+  width: 3.65rem;
+  height: 3.65rem;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: #25d366;
+  box-shadow: 0 12px 32px rgba(7, 17, 31, .28);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-widget__icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+.whatsapp-widget:hover .whatsapp-widget__label,
+.whatsapp-widget:focus-visible .whatsapp-widget__label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.whatsapp-widget:hover .whatsapp-widget__icon {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 16px 36px rgba(7, 17, 31, .34);
+}
+@media (max-width: 639px) {
+  .whatsapp-widget__label {
+    display: none;
+  }
+  .whatsapp-widget__icon {
+    width: 3.35rem;
+    height: 3.35rem;
+  }
+}
+.shell {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.display {
+  font-size: clamp(2.75rem, 7vw, 6.3rem);
+  line-height: 0.94;
+  letter-spacing: -0.065em;
+  font-weight: 800;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+.grid-noise {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.lime-shadow {
+  box-shadow: 8px 8px 0 #b7f34a;
+}
+.home-cta {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 17, 31, 1) 0%,
+      rgba(7, 17, 31, 0.92) 52%,
+      rgba(7, 17, 31, 0.28) 100%
+    ),
+    url("/images/console-repair.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.services-cta {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 17, 31, 1) 0%,
+      rgba(7, 17, 31, 0.94) 54%,
+      rgba(7, 17, 31, 0.32) 100%
+    ),
+    url("/images/technician-work.jpg");
+  background-size: cover;
+  background-position: center 48%;
+}
+.shop-cta {
+  background-image:
+    linear-gradient(rgba(7, 17, 31, 0.9), rgba(7, 17, 31, 0.94)),
+    url("/images/desktop-repair.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.card-lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(7, 17, 31, 0.1);
+}
+.field {
+  width: 100%;
+  border: 1px solid #d9e0e8;
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  outline: none;
+}
+.field:focus {
+  border-color: #7aa928;
+  box-shadow: 0 0 0 3px rgba(183, 243, 74, 0.25);
+}
+@layer components {
+  .page-hero {
+    @apply relative overflow-hidden bg-[#07111f] py-20 text-white md:py-24;
+  }
+  .section-space {
+    @apply py-20 md:py-24;
+  }
+  .surface-card {
+    @apply rounded-2xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 md:p-8;
+  }
+  .icon-tile {
+    @apply grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#07111f] text-[#b7f34a];
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-[#b7f34a] px-7 py-4 font-extrabold text-[#07111f] hover:bg-white;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center rounded-lg bg-[#07111f] px-7 py-4 font-extrabold text-white hover:bg-slate-800;
+  }
+  .section-kicker {
+    @apply mb-4 text-[.72rem] font-extrabold uppercase tracking-[.18em] text-[#668d1f];
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
