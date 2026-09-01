@@ -216,7 +216,7 @@ export default function Services() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              ["Walk-in assessment", "Visit 147 Voortrekker Road, Bellville, with the device and any fault-related power supply or accessory."],
+              ["Walk-in assessment", "Visit Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge, with the device and any fault-related power supply or accessory."],
               ["Courier enquiries", "Available by arrangement for suitable devices from elsewhere in South Africa."],
               ["Business equipment", "Ask about desktops, displays, audio equipment and other workshop-assessable electronics."],
               ["Unlisted devices", "Send the brand, model and symptoms first. Repairability and parts availability vary."],

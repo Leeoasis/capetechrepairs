@@ -98,11 +98,11 @@ export default function Home() {
       </section>
       <section className="border-b border-slate-200 bg-white py-5">
         <div className="shell grid gap-4 text-sm sm:grid-cols-3 sm:items-center">
-          <a href="https://maps.google.com/?q=147+Voortrekker+Road+Bellville+Cape+Town" className="font-extrabold hover:text-[#668d1f]">
-            <span className="mr-2 text-[#668d1f]">●</span>147 Voortrekker Road, Bellville
+          <a href="https://maps.google.com/?q=Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge" className="font-extrabold hover:text-[#668d1f]">
+            <span className="mr-2 text-[#668d1f]">●</span>Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge
           </a>
           <p className="font-bold text-slate-600 sm:text-center">Sunday–Friday · 09:00–18:00</p>
-          <a href="https://maps.google.com/?q=Cape+Tech+Repairs+147+Voortrekker+Road+Bellville" className="font-extrabold underline decoration-[#b7f34a] decoration-4 underline-offset-4 sm:text-right">
+          <a href="https://maps.google.com/?q=Cape+Tech+Repairs+Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge" className="font-extrabold underline decoration-[#b7f34a] decoration-4 underline-offset-4 sm:text-right">
             Check customer feedback on Google →
           </a>
         </div>

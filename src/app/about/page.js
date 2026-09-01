@@ -103,13 +103,13 @@ export default function About() {
           </div>
           <div>
             <p className="leading-8 text-slate-300">
-              Walk in at 147 Voortrekker Road or contact the workshop before
+              Walk in at Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge or contact the workshop before
               sending a device by courier. We will confirm whether the equipment
               is suitable for assessment and explain how to package it safely.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/quote" className="btn-primary">Book a repair →</Link>
-              <a href="https://maps.google.com/?q=147+Voortrekker+Road+Bellville+Cape+Town" className="rounded-lg border border-white/20 px-7 py-4 font-extrabold hover:bg-white/10">Get directions</a>
+              <a href="https://maps.google.com/?q=Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge" className="rounded-lg border border-white/20 px-7 py-4 font-extrabold hover:bg-white/10">Get directions</a>
             </div>
           </div>
         </div>

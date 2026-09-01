@@ -93,8 +93,8 @@ const business = {
   email: "Info@capetechrepairs.co.za",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "147 Voortrekker Road",
-    addressLocality: "Bellville",
+    streetAddress: "Shop 6 Delphi Arena, 1 Old Oak Road",
+    addressLocality: "Kenridge",
     addressRegion: "Western Cape",
     postalCode: "7530",
     addressCountry: "ZA",

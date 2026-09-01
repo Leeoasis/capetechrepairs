@@ -37,7 +37,7 @@ export default function BookingConfidence({ compact = false }) {
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/quote" className="btn-dark">Ask about your device →</Link>
             <a
-              href="https://maps.google.com/?q=Cape+Tech+Repairs+147+Voortrekker+Road+Bellville"
+              href="https://maps.google.com/?q=Cape+Tech+Repairs+Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge"
               className="inline-flex items-center rounded-lg border border-[#07111f]/20 px-5 py-3 text-sm font-extrabold hover:bg-white/60"
             >
               Check customer feedback on Google

@@ -39,9 +39,9 @@ export default function Quote() {
                 <b className="block">Workshop</b>
                 <a
                   className="mt-1 block text-slate-600 underline"
-                  href="https://maps.google.com/?q=147+Voortrekker+Road+Bellville+Cape+Town"
+                  href="https://maps.google.com/?q=Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge"
                 >
-                  147 Voortrekker Road, Bellville
+                  Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge
                 </a>
               </div>
               <div>

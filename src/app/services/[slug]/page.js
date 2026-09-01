@@ -70,7 +70,7 @@ export default async function ServicePage({ params }) {
       </section>
       <BookingConfidence compact />
       <section className="section-space bg-[#07111f] text-white">
-        <div className="shell text-center"><p className="eyebrow text-[#b7f34a]">Bellville workshop</p><h2 className="section-title mx-auto mt-4 max-w-3xl">Ready to get a clear answer?</h2><p className="mx-auto mt-5 max-w-xl text-slate-300">Visit 147 Voortrekker Road, Bellville, or send the device details before arranging a courier.</p><Link href="/quote" className="btn-primary mt-8">Start your enquiry →</Link></div>
+        <div className="shell text-center"><p className="eyebrow text-[#b7f34a]">Kenridge workshop</p><h2 className="section-title mx-auto mt-4 max-w-3xl">Ready to get a clear answer?</h2><p className="mx-auto mt-5 max-w-xl text-slate-300">Visit Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge, or send the device details before arranging a courier.</p><Link href="/quote" className="btn-primary mt-8">Start your enquiry →</Link></div>
       </section>
     </main>
   );
