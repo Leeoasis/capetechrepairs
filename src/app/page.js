@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "./components/Icons";
 import Faq from "./components/Faq";
+import YouTubeLink, { YouTubeBanner } from "./components/YouTubeLink";
 export const metadata = { alternates: { canonical: "/" } };
 const services = [
   [
@@ -55,6 +56,7 @@ export default function Home() {
               >
                 Explore services
               </Link>
+              <YouTubeLink />
             </div>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-bold text-slate-400">
               <span>✓ Walk-ins welcome</span>
@@ -107,6 +109,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+      <YouTubeBanner />
       <section className="section-space">
         <div className="shell">
           <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
