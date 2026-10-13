@@ -85,6 +85,7 @@ const business = {
   "@type": "ElectronicsStore",
   "@id": "https://capetechrepairs.co.za/#business",
   name: "Cape Tech Repairs",
+  sameAs: ["https://www.youtube.com/@cape-tech8303"],
   url: "https://capetechrepairs.co.za",
   logo: "https://capetechrepairs.co.za/cape-tech-logo.png",
   image: "https://capetechrepairs.co.za/images/repair-hero.png",
@@ -143,6 +144,7 @@ const organization = {
   "@type": "Organization",
   "@id": "https://capetechrepairs.co.za/#organization",
   name: "Cape Tech Repairs",
+  sameAs: ["https://www.youtube.com/@cape-tech8303"],
   url: "https://capetechrepairs.co.za",
   logo: {
     "@type": "ImageObject",

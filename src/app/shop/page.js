@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ShopProducts from "./ShopProducts";
+import { YouTubeBanner } from "../components/YouTubeLink";
 import PageHero from "../components/PageHero";
 export const metadata = {
   title: "Refurbished Laptops and Computers in Cape Town",
@@ -48,6 +49,7 @@ export default function Shop() {
         note="Laptops · Desktops · Gaming · Displays · Parts"
       />
       <ShopProducts />
+      <YouTubeBanner />
       <section className="py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-5 md:grid-cols-2">

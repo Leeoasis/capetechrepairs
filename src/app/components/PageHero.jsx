@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import YouTubeLink from "./YouTubeLink";
 
 export default function PageHero({
   eyebrow,
@@ -35,6 +36,7 @@ export default function PageHero({
               >
                 {secondaryLabel}
               </a>
+              <YouTubeLink />
             </div>
             {note && (
               <p className="mt-6 inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold text-slate-300">
