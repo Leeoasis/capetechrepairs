@@ -4,7 +4,7 @@ export default function YouTubeLink({ compact = false }) {
   return (
     <a href={youtubeChannel} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center justify-center gap-3 rounded-lg bg-[#c8102e] font-extrabold text-white shadow-lg transition hover:bg-[#a90d27] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-500 ${compact ? "px-4 py-3 text-sm" : "px-6 py-4"}`}>
       <svg viewBox="0 0 28 20" className="h-5 w-7 shrink-0" fill="currentColor" aria-hidden="true"><path d="M27.4 3.1A3.5 3.5 0 0 0 25 .6C22.8 0 14 0 14 0S5.2 0 3 .6A3.5 3.5 0 0 0 .6 3.1C0 5.3 0 10 0 10s0 4.7.6 6.9A3.5 3.5 0 0 0 3 19.4c2.2.6 11 .6 11 .6s8.8 0 11-.6a3.5 3.5 0 0 0 2.4-2.5c.6-2.2.6-6.9.6-6.9s0-4.7-.6-6.9ZM11.2 14.3V5.7L18.5 10l-7.3 4.3Z" /></svg>
-      {compact ? "YouTube" : "Watch us on YouTube"}
+      {compact ? "YouTube" : "See tech come back to life"}
       <span className="sr-only"> (opens in a new tab)</span>
     </a>
   );
