@@ -62,7 +62,7 @@ export default function Blog() {
         imageAlt="Technician using a microscope for detailed electronics repair"
         note="Care · Troubleshooting · Buying advice · Repair decisions"
       />
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {guides.map(([tag, title, text, meta], i) => (

@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## WhatsApp shop
+
+The `/shop` page uses `src/app/shop/products.js` as its product catalogue. Add product photos under `public/images/products/`, then add the product's ID, name, price in rand, specifications and public image paths to the catalogue.
+
+- Each entry represents one pre-owned unit. The enquiry cart allows one of each unit.
+- Set `status` to `"sold"` when a unit sells, then commit and deploy. Sold units remain visible but cannot be added, and are removed from saved carts when the updated site loads.
+- Prices and availability come from the deployed catalogue; this is not live inventory or a reservation system.
+- The cart saves product IDs in the customer's browser. WhatsApp receives the current product names, prices, subtotal and collection or delivery preference only when the customer opens and sends the message.
+- No payment is processed and no order is recorded by the website. Confirm stock, condition/faults, battery health, accessories, delivery costs, payment arrangements, warranty and return terms in writing before accepting payment. Provide order confirmation and a receipt through the workshop's normal process.
+- Update the listing with confirmed condition, battery, accessories and cover details as they become available. Do not advertise unconfirmed warranties, delivery promises or reviews.
+
+Check changes with `npm run build` and `npm run typecheck`. Browser checks should cover add/remove, reload persistence, sold units, gallery selection, the WhatsApp message and mobile layout.
+
 ## Getting Started
 
 First, run the development server:

@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import StructuredData from "./components/StructuredData";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+import MobileContactBar from "./components/MobileContactBar";
 
 const manrope = Manrope({ subsets: ["latin"], display: "swap" });
 const description =
@@ -92,8 +93,8 @@ const business = {
   email: "Info@capetechrepairs.co.za",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "147 Voortrekker Road",
-    addressLocality: "Bellville",
+    streetAddress: "Shop 6 Delphi Arena, 1 Old Oak Road",
+    addressLocality: "Kenridge",
     addressRegion: "Western Cape",
     postalCode: "7530",
     addressCountry: "ZA",
@@ -163,6 +164,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div id="main-content">{children}</div>
         <WhatsAppWidget />
+        <MobileContactBar />
         <Footer />
       </body>
     </html>

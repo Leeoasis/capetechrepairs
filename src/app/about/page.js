@@ -25,13 +25,13 @@ export default function About() {
         imageAlt="Electronics technician working carefully on a circuit board"
         note="10+ years · Five specialists · Thousands of repairs"
       />
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="shell grid gap-16 lg:grid-cols-2 lg:items-center">
           <Image
-            src="/images/workbench.jpg"
+            src="/images/technician-work.jpg"
             width={700}
             height={520}
-            alt="Cape Tech electronics workbench"
+            alt="Precision microscope used for detailed electronics repair"
             className="h-[500px] w-full rounded-2xl object-cover"
           />
           <div>
@@ -67,7 +67,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
             <div>
@@ -103,13 +103,13 @@ export default function About() {
           </div>
           <div>
             <p className="leading-8 text-slate-300">
-              Walk in at 147 Voortrekker Road or contact the workshop before
+              Walk in at Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge or contact the workshop before
               sending a device by courier. We will confirm whether the equipment
               is suitable for assessment and explain how to package it safely.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/quote" className="btn-primary">Book a repair →</Link>
-              <a href="https://maps.google.com/?q=147+Voortrekker+Road+Bellville+Cape+Town" className="rounded-lg border border-white/20 px-7 py-4 font-extrabold hover:bg-white/10">Get directions</a>
+              <a href="https://maps.google.com/?q=Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge" className="rounded-lg border border-white/20 px-7 py-4 font-extrabold hover:bg-white/10">Get directions</a>
             </div>
           </div>
         </div>
