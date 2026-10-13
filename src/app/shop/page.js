@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ShopProducts from "./ShopProducts";
 import PageHero from "../components/PageHero";
 export const metadata = {
   title: "Refurbished Laptops and Computers in Cape Town",
@@ -46,6 +47,7 @@ export default function Shop() {
         imageAlt="Electronic components arranged neatly for inspection"
         note="Laptops · Desktops · Gaming · Displays · Parts"
       />
+      <ShopProducts />
       <section className="py-16 md:py-24">
         <div className="shell">
           <div className="grid gap-5 md:grid-cols-2">
@@ -74,21 +76,21 @@ export default function Shop() {
         <div className="shell grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="eyebrow mb-4 text-[#668d1f]">How we sell</p>
-            <h2 className="section-title">No mystery listings.</h2>
+            <h2 className="section-title">A clear path to your purchase.</h2>
           </div>
           <div className="grid gap-5">
             {[
               [
-                "Tested first",
-                "Core functions are checked before a device is offered for sale.",
+                "Confirm the details",
+                "Send your selection on WhatsApp. Confirm stock, condition, battery health, accessories and the final total before committing.",
               ],
               [
-                "Condition explained",
-                "Ask about cosmetic condition, specifications, battery health, and included accessories.",
+                "Arrange collection or delivery",
+                "Contact the Kenridge workshop to arrange collection and ask about inspecting the device. Delivery availability and fees are confirmed separately.",
               ],
               [
-                "Buy for your needs",
-                "Tell us how you will use it and your budget—we’ll help narrow the options.",
+                "Agree payment and keep a record",
+                "Confirm EFT or cash arrangements directly with the workshop. Ask for written order confirmation, warranty and return terms, and a receipt.",
               ],
             ].map(([title, text], i) => (
               <div key={title} className="grid grid-cols-[40px_1fr] gap-4">
@@ -127,6 +129,21 @@ export default function Shop() {
                 <p className="mt-2 text-sm leading-6 text-slate-600">{text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-slate-200 bg-white py-12">
+        <div className="shell grid gap-8 md:grid-cols-2">
+          <div>
+            <p className="section-kicker">Speak to the workshop</p>
+            <h2 className="text-2xl font-extrabold">Cape Tech Repairs, Kenridge</h2>
+            <p className="mt-3 leading-7 text-slate-600">Shop 6 Delphi Arena, 1 Old Oak Road, Kenridge, Cape Town. Contact us before travelling to confirm the product and collection arrangements.</p>
+            <a className="mt-4 inline-block font-bold underline underline-offset-4" href="https://maps.google.com/?q=Cape+Tech+Repairs+Shop+6+Delphi+Arena+1+Old+Oak+Road+Kenridge">Find us on Google Maps →</a>
+          </div>
+          <div className="rounded-xl bg-slate-50 p-6">
+            <h3 className="font-extrabold">Questions about a purchase?</h3>
+            <p className="mt-3 text-sm leading-7 text-slate-600">For a product question, a fault after purchase or a return enquiry, contact us with your product name and order or receipt details. Confirm the terms for your specific item before paying.</p>
+            <a className="mt-4 inline-block font-bold underline underline-offset-4" href="tel:+27648188737">Call 064 818 8737</a>
           </div>
         </div>
       </section>
