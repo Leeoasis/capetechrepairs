@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { products, formatPrice } from "./products";
 
 const storageKey = "cape-tech-enquiry-cart";
 
-export default function ShopProducts() {
+export default function ShopProducts({ productId = null }) {
+  const detailProduct = products.find((product) => product.id === productId);
+  const visibleProducts = detailProduct ? [detailProduct] : products;
   const [cart, setCart] = useState([]);
   const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState("");
@@ -47,14 +50,33 @@ export default function ShopProducts() {
   return (
     <section className="py-16 md:py-24" aria-labelledby="products-heading">
       <div className="shell">
-        <p className="section-kicker">Shop laptops</p>
-        <h2 id="products-heading" className="section-title">Find your next laptop.</h2>
+        <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all laptops</Link> : "Shop laptops"}</p>
+        {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className="section-title">Find your next laptop.</h2>}
         <p className="mt-4 max-w-2xl leading-7 text-slate-600">Choose a product, review your selection and check availability with the workshop on WhatsApp. Payment is arranged directly after the details are confirmed.</p>
-        <div className="mt-8 grid items-start gap-6 xl:grid-cols-[1fr_340px]">
-          <div className="grid gap-6">
-            {products.map((product) => {
+        <div className={`mt-8 grid items-start gap-6 ${detailProduct ? "xl:grid-cols-[1fr_340px]" : ""}`}>
+          <div className={`grid gap-6 ${detailProduct ? "" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+            {visibleProducts.map((product) => {
               const added = selected.some((p) => p.id === product.id);
               const sold = product.status === "sold";
+              if (!detailProduct) return (
+                <article key={product.id} className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-shadow hover:shadow-lg">
+                  <Link href={`/shop/${product.id}`} className="relative block aspect-[4/3] bg-white p-5" aria-label={`View ${product.name} details`}>
+                    <Image src={product.photos[0]} alt={`${product.finish} ${product.name}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-contain p-5 transition-transform group-hover:scale-105" />
+                  </Link>
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Pre-owned laptop</p>
+                    <h3 className="mt-2 text-xl font-extrabold"><Link href={`/shop/${product.id}`} className="hover:underline">{product.name}</Link></h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{product.specs.slice(0, 3).map(([, value]) => value).join(" / ")}</p>
+                    <p className="mt-4 text-2xl font-black">{formatPrice(product.price)}</p>
+                    <p className="mt-2 text-xs font-bold text-[#456316]">{sold ? "Sold" : "Listed - confirm availability"}</p>
+                    <Link href={`/shop/${product.id}`} className="btn-dark mt-5 w-full">View details</Link>
+                    <button type="button" disabled={!ready || sold || added} className="mt-3 min-h-11 text-sm font-extrabold underline underline-offset-4 disabled:text-slate-400" onClick={() => {
+                      setCart((current) => [...new Set([...current, product.id])]);
+                      setNotice(`${product.name} added to your enquiry.`);
+                    }}>{sold ? "Sold" : added ? "Added to your enquiry" : "Add to enquiry"}</button>
+                  </div>
+                </article>
+              );
               return (
                 <article key={product.id} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
                   <ProductGallery product={product} />

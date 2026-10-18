@@ -1,3 +1,5 @@
+import { products } from "./shop/products";
+
 export default function sitemap() {
   const base = "https://capetechrepairs.co.za";
   return [
@@ -10,6 +12,7 @@ export default function sitemap() {
     ["/services/board-level-repair", "monthly", 0.85],
     ["/quote", "monthly", 0.9],
     ["/shop", "weekly", 0.8],
+    ...products.map((product) => [`/shop/${product.id}`, "weekly", 0.8]),
     ["/about", "monthly", 0.6],
     ["/blog", "weekly", 0.7],
   ].map(([path, changeFrequency, priority]) => ({
