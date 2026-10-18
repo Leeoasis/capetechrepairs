@@ -22,7 +22,7 @@ export const products = [
     id: "hp-elitebook-840-g4",
     name: "HP EliteBook 840 G4",
     finish: "Silver",
-    price: null,
+    price: 2800,
     status: "available",
     description: "A compact business-class laptop for office work, study and everyday productivity, with a Core i7 processor and 16 GB of memory for multitasking.",
     specs: [
@@ -44,7 +44,7 @@ export const products = [
     id: "hp-elitebook-850-g6",
     name: "HP EliteBook 850 G6",
     finish: "Silver",
-    price: null,
+    price: 3000,
     status: "available",
     description: "A slim business laptop with a larger 15.6-inch display, a numeric keypad and SSD storage for office work, administration, online learning and video calls.",
     specs: [
