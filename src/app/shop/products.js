@@ -13,7 +13,7 @@ export const products = [
     name: "HP 255 G8",
     categories: ["laptops", "everyday-laptops"],
     finish: "Silver",
-    price: 3200,
+    price: 3000,
     status: "available", // Change to "sold" when this unit is sold.
     description: "An everyday laptop for work, study and browsing, with 8 GB of memory and NVMe SSD storage.",
     specs: [
@@ -33,7 +33,7 @@ export const products = [
     name: "HP EliteBook 840 G4",
     categories: ["laptops", "business-laptops"],
     finish: "Silver",
-    price: 2800,
+    price: 3000,
     status: "available",
     description: "A compact business-class laptop for office work, study and everyday productivity, with a Core i7 processor and 16 GB of memory for multitasking.",
     specs: [
@@ -56,7 +56,7 @@ export const products = [
     name: "HP EliteBook 850 G6",
     categories: ["laptops", "business-laptops"],
     finish: "Silver",
-    price: 3000,
+    price: 3500,
     status: "available",
     description: "A slim business laptop with a larger 15.6-inch display, a numeric keypad and SSD storage for office work, administration, online learning and video calls.",
     specs: [
