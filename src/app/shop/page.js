@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ShopProducts from "./ShopProducts";
-import { YouTubeBanner } from "../components/YouTubeLink";
-import PageHero from "../components/PageHero";
+import YouTubeLink, { YouTubeBanner } from "../components/YouTubeLink";
 export const metadata = {
   title: "Refurbished Laptops and Computers in Cape Town",
   description:
@@ -40,15 +39,17 @@ const categories = [
 export default function Shop() {
   return (
     <main>
-      <PageHero
-        eyebrow="Refurbished & tested"
-        title="More value. Less waste."
-        description="Selected pre-owned technology prepared for its next owner, with condition, specifications and practical value explained clearly."
-        image="/images/desktop-repair.jpg"
-        imageAlt="Electronic components arranged neatly for inspection"
-        note="Laptops · Desktops · Gaming · Displays · Parts"
-      />
-      <ShopProducts />
+      <header className="border-b border-slate-200 bg-white py-6 md:py-8">
+        <div className="shell flex flex-col justify-between gap-4 md:flex-row md:items-center">
+          <div>
+            <p className="eyebrow mb-2 text-[#668d1f]">Pre-owned technology</p>
+            <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">Shop Cape Tech</h1>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Browse laptops, compare specs and enquire directly with our workshop.</p>
+          </div>
+          <div className="shrink-0"><YouTubeLink /></div>
+        </div>
+      </header>
+      <ShopProducts compact />
       <YouTubeBanner />
       <section className="py-16 md:py-24">
         <div className="shell">

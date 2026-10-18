@@ -7,7 +7,7 @@ import { products, productCategories, formatPrice } from "./products";
 
 const storageKey = "cape-tech-enquiry-cart";
 
-export default function ShopProducts({ productId = null }) {
+export default function ShopProducts({ productId = null, compact = false }) {
   const detailProduct = products.find((product) => product.id === productId);
   const [category, setCategory] = useState("all");
   const visibleProducts = detailProduct ? [detailProduct] : products.filter((product) => category === "all" || product.categories.includes(category));
@@ -49,11 +49,11 @@ export default function ShopProducts({ productId = null }) {
   ].join("\n");
 
   return (
-    <section className="py-16 md:py-24" aria-labelledby="products-heading">
+    <section className={compact ? "py-7 md:py-8" : "py-16 md:py-24"} aria-labelledby="products-heading">
       <div className="shell">
-        <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all laptops</Link> : "Shop laptops"}</p>
-        {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className="section-title">Find your next laptop.</h2>}
-        <p className="mt-4 max-w-2xl leading-7 text-slate-600">Choose a product, review your selection and check availability with the workshop on WhatsApp. Payment is arranged directly after the details are confirmed.</p>
+        {!compact && <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all laptops</Link> : "Shop laptops"}</p>}
+        {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className={compact ? "text-xl font-extrabold md:text-2xl" : "section-title"}>Find your next laptop.</h2>}
+        {!compact && <p className="mt-4 max-w-2xl leading-7 text-slate-600">Choose a product, review your selection and check availability with the workshop on WhatsApp. Payment is arranged directly after the details are confirmed.</p>}
         {!detailProduct && (
           <div className="mt-7">
             <div role="group" aria-label="Filter products by category" className="flex flex-wrap gap-2">
