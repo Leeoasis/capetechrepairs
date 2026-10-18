@@ -4,6 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 The `/shop` page uses `src/app/shop/products.js` as its product catalogue. Add product photos under `public/images/products/`, then add the product's ID, name, price in rand, specifications and public image paths to the catalogue.
 
+- Use `price: null` for products without a confirmed price. These show "Price on enquiry" and are excluded from the priced subtotal; the WhatsApp message requests a complete quote.
 - Each entry represents one pre-owned unit. The enquiry cart allows one of each unit.
 - Set `status` to `"sold"` when a unit sells, then commit and deploy. Sold units remain visible but cannot be added, and are removed from saved carts when the updated site loads.
 - Prices and availability come from the deployed catalogue; this is not live inventory or a reservation system.

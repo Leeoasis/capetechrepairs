@@ -29,11 +29,16 @@ export default function ShopProducts() {
   }, [cart, ready]);
 
   const selected = products.filter((p) => p.status === "available" && cart.includes(p.id));
-  const total = selected.reduce((sum, p) => sum + p.price, 0);
+  const priced = selected.filter((p) => p.price !== null);
+  const needsQuote = selected.some((p) => p.price === null);
+  const total = priced.reduce((sum, p) => sum + p.price, 0);
+  const subtotalLabel = needsQuote ? "Priced items subtotal" : "Product subtotal";
+  const subtotal = priced.length ? formatPrice(total) : "To be quoted";
   const message = [
     "Hi Cape Tech Repairs, please confirm availability for:",
     ...selected.map((p) => `- ${p.name} (${p.finish}), ref ${p.id}, quantity 1: ${formatPrice(p.price)}`),
-    `Product subtotal: ${formatPrice(total)}`,
+    `${subtotalLabel}: ${subtotal}`,
+    ...(needsQuote ? ["Please quote the price-on-enquiry items separately and confirm the complete order total."] : []),
     `Preference: ${fulfilment}`,
     "Please confirm condition and any faults, battery health, included accessories, warranty and return terms, and the final total including any delivery fee.",
     "Please also confirm collection/inspection arrangements and EFT or cash payment options, and provide a written order confirmation and receipt.",
@@ -98,7 +103,8 @@ export default function ShopProducts() {
                     }}>Remove</button>
                   </li>)}
                 </ul>
-                <div className="flex justify-between gap-3 border-t border-slate-200 pt-4 font-extrabold"><span>Product subtotal</span><span>{formatPrice(total)}</span></div>
+                <div className="flex justify-between gap-3 border-t border-slate-200 pt-4 font-extrabold"><span>{subtotalLabel}</span><span>{subtotal}</span></div>
+                {needsQuote && <p className="mt-2 text-sm font-bold text-slate-600">Price-on-enquiry items are quoted separately. Ask us for your complete order total.</p>}
                 <p className="mt-2 text-xs leading-5 text-slate-500">Delivery, if needed, is quoted separately. Final price and availability are confirmed by the workshop. Adding an item does not reserve it.</p>
                 <label htmlFor="fulfilment" className="mt-5 block text-sm font-bold">How would you like to receive it?</label>
                 <select id="fulfilment" className="field mt-2" value={fulfilment} onChange={(e) => setFulfilment(e.target.value)}>
@@ -115,7 +121,7 @@ export default function ShopProducts() {
             </div>
           </aside>
         </div>
-        <noscript><p className="mt-6 rounded-xl bg-white p-6">To enquire without JavaScript, <a className="font-bold underline" href="https://wa.me/27648188737?text=Hi%20Cape%20Tech%2C%20is%20the%20HP%20255%20G8%20at%20R3200%20still%20available%3F">contact us on WhatsApp about the HP 255 G8</a> or call 064 818 8737.</p></noscript>
+        <noscript><p className="mt-6 rounded-xl bg-white p-6">To enquire without JavaScript, <a className="font-bold underline" href="https://wa.me/27648188737?text=Hi%20Cape%20Tech%2C%20please%20confirm%20pricing%20and%20availability%20for%20your%20listed%20laptops.">contact us on WhatsApp about our listed laptops</a> or call 064 818 8737.</p></noscript>
       </div>
     </section>
   );
