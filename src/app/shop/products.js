@@ -1,7 +1,17 @@
+export const productCategories = [
+  { id: "laptops", name: "Laptops" },
+  { id: "business-laptops", name: "Business laptops" },
+  { id: "everyday-laptops", name: "Everyday laptops" },
+  { id: "desktops", name: "Desktop PCs" },
+  { id: "gaming", name: "Gaming systems" },
+  { id: "displays-parts", name: "Displays & parts" },
+];
+
 export const products = [
   {
     id: "hp-255-g8-silver",
     name: "HP 255 G8",
+    categories: ["laptops", "everyday-laptops"],
     finish: "Silver",
     price: 3200,
     status: "available", // Change to "sold" when this unit is sold.
@@ -21,6 +31,7 @@ export const products = [
   {
     id: "hp-elitebook-840-g4",
     name: "HP EliteBook 840 G4",
+    categories: ["laptops", "business-laptops"],
     finish: "Silver",
     price: 2800,
     status: "available",
@@ -43,6 +54,7 @@ export const products = [
   {
     id: "hp-elitebook-850-g6",
     name: "HP EliteBook 850 G6",
+    categories: ["laptops", "business-laptops"],
     finish: "Silver",
     price: 3000,
     status: "available",

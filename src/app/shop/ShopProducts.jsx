@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { products, formatPrice } from "./products";
+import { products, productCategories, formatPrice } from "./products";
 
 const storageKey = "cape-tech-enquiry-cart";
 
 export default function ShopProducts({ productId = null }) {
   const detailProduct = products.find((product) => product.id === productId);
-  const visibleProducts = detailProduct ? [detailProduct] : products;
+  const [category, setCategory] = useState("all");
+  const visibleProducts = detailProduct ? [detailProduct] : products.filter((product) => category === "all" || product.categories.includes(category));
   const [cart, setCart] = useState([]);
   const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState("");
@@ -53,7 +54,30 @@ export default function ShopProducts({ productId = null }) {
         <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all laptops</Link> : "Shop laptops"}</p>
         {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className="section-title">Find your next laptop.</h2>}
         <p className="mt-4 max-w-2xl leading-7 text-slate-600">Choose a product, review your selection and check availability with the workshop on WhatsApp. Payment is arranged directly after the details are confirmed.</p>
+        {!detailProduct && (
+          <div className="mt-7">
+            <div role="group" aria-label="Filter products by category" className="flex flex-wrap gap-2">
+              {[{ id: "all", name: "All products" }, ...productCategories].map((item) => {
+                const count = products.filter((product) => item.id === "all" || product.categories.includes(item.id)).length;
+                return <button key={item.id} type="button" aria-pressed={category === item.id} onClick={() => setCategory(item.id)} className={`min-h-11 rounded-full border px-4 py-2 text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#668d1f] ${category === item.id ? "border-[#07111f] bg-[#07111f] text-white" : "border-slate-300 bg-white text-slate-600 hover:border-[#668d1f] hover:text-[#456316]"}`}>
+                  {item.name} <span className="ml-1 opacity-70">({count})</span>
+                </button>;
+              })}
+            </div>
+            <p role="status" className="mt-4 text-sm text-slate-600">{visibleProducts.length} {visibleProducts.length === 1 ? "product" : "products"}{category === "all" ? " in all categories" : ` in ${productCategories.find((item) => item.id === category)?.name}`}</p>
+          </div>
+        )}
         <div className={`mt-8 grid items-start gap-6 ${detailProduct ? "xl:grid-cols-[1fr_340px]" : ""}`}>
+          {!detailProduct && visibleProducts.length === 0 && (
+            <div className="rounded-2xl border border-slate-200 bg-white p-8">
+              <h3 className="text-xl font-extrabold">No products listed in this category yet.</h3>
+              <p className="mt-3 leading-7 text-slate-600">Stock changes regularly. Ask the workshop what is available or browse the other categories.</p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <button type="button" className="btn-dark" onClick={() => setCategory("all")}>Show all products</button>
+                <a className="inline-flex min-h-11 items-center font-bold underline underline-offset-4" href={`https://wa.me/27648188737?text=${encodeURIComponent(`Hi Cape Tech, what ${productCategories.find((item) => item.id === category)?.name.toLowerCase()} do you have available?`)}`}>Ask on WhatsApp</a>
+              </div>
+            </div>
+          )}
           <div className={`grid gap-6 ${detailProduct ? "" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
             {visibleProducts.map((product) => {
               const added = selected.some((p) => p.id === product.id);
