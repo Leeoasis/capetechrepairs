@@ -178,7 +178,7 @@ export const products = [
   },
   {
     "id": "hp-15-da2xxx",
-    "name": "HP 15-da2xxx",
+    "name": "HP 15 Notebook - Core i7",
     "categories": [
       "laptops",
       "everyday-laptops"
@@ -206,7 +206,7 @@ export const products = [
       ],
       [
         "Product family",
-        "HP 15-da2000 series (15-da2xxx; exact variant to be confirmed)"
+        "HP 15 series"
       ],
       [
         "Operating system",
