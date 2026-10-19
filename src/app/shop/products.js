@@ -73,6 +73,170 @@ export const products = [
       "23.36.17.jpeg", "23.36.17 (1).jpeg", "23.36.17 (2).jpeg", "23.36.18.jpeg", "23.36.18 (1).jpeg",
     ].map((filename) => `/images/products/hp-elitebook-850-g6/WhatsApp Image 2026-10-18 at ${filename}`),
   },
+  {
+    "id": "lenovo-thinkpad-x390",
+    "name": "Lenovo ThinkPad X390",
+    "categories": [
+      "laptops",
+      "business-laptops"
+    ],
+    "finish": "Black",
+    "price": null,
+    "status": "available",
+    "description": "A compact, lightweight business laptop for work, studies and everyday multitasking, with 16 GB of memory and a portable 13.3-inch display.",
+    "specs": [
+      [
+        "Processor",
+        "Intel Core i5-8365U (8th generation)"
+      ],
+      [
+        "Memory",
+        "16 GB DDR4"
+      ],
+      [
+        "Storage",
+        "256 GB M.2 SSD"
+      ],
+      [
+        "Display",
+        "13.3-inch"
+      ],
+      [
+        "Operating system",
+        "Windows 11 Pro"
+      ],
+      [
+        "Battery health",
+        "92% (reported at listing; confirm current health)"
+      ]
+    ],
+    "photos": [
+      "/images/products/dell-thinkpad-x390/WhatsApp Image 2026-10-19 at 00.32.16.jpeg",
+      "/images/products/dell-thinkpad-x390/WhatsApp Image 2026-10-19 at 00.32.16 (1).jpeg",
+      "/images/products/dell-thinkpad-x390/WhatsApp Image 2026-10-19 at 00.32.17 (1).jpeg",
+      "/images/products/dell-thinkpad-x390/WhatsApp Image 2026-10-19 at 00.32.17 (2).jpeg",
+      "/images/products/dell-thinkpad-x390/WhatsApp Image 2026-10-19 at 00.32.17.jpeg"
+    ]
+  },
+  {
+    "id": "dell-inspiron-3593",
+    "name": "Dell Inspiron 3593",
+    "categories": [
+      "laptops",
+      "everyday-laptops"
+    ],
+    "finish": "Black",
+    "price": null,
+    "status": "available",
+    "description": "A practical 15.6-inch laptop for study, office tasks and home use, with a 10th-generation Core i5 processor, NVMe SSD storage and a full-size keyboard.",
+    "specs": [
+      [
+        "Processor",
+        "Intel Core i5-1035G1 (10th generation)"
+      ],
+      [
+        "Memory",
+        "8 GB"
+      ],
+      [
+        "Storage",
+        "256 GB NVMe SSD"
+      ],
+      [
+        "Display",
+        "15.6-inch"
+      ],
+      [
+        "Operating system",
+        "Windows 11 (installed and activated)"
+      ],
+      [
+        "Office software",
+        "Microsoft Office 2021 (installed and activated)"
+      ],
+      [
+        "Keyboard",
+        "Full-size keyboard with numeric keypad"
+      ],
+      [
+        "Connectivity",
+        "Wi-Fi, Bluetooth, USB, HDMI and Ethernet"
+      ]
+    ],
+    "photos": [
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.10.jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.10 (1).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.11 (1).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.11 (2).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.11 (3).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.11 (4).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.11.jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.12 (1).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.12 (2).jpeg",
+      "/images/products/dell-inspiron-3593/WhatsApp Image 2026-10-19 at 02.16.12.jpeg"
+    ]
+  },
+  {
+    "id": "hp-15-da2xxx",
+    "name": "HP 15-da2xxx",
+    "categories": [
+      "laptops",
+      "everyday-laptops"
+    ],
+    "finish": "Silver / black",
+    "price": null,
+    "status": "available",
+    "description": "A 15.6-inch HP 15-series laptop for work, studies and home use, with a 10th-generation Core i7 processor, 16 GB of memory and NVMe SSD storage.",
+    "specs": [
+      [
+        "Processor",
+        "Intel Core i7-10510U (10th generation)"
+      ],
+      [
+        "Memory",
+        "16 GB DDR4"
+      ],
+      [
+        "Storage",
+        "256 GB NVMe SSD"
+      ],
+      [
+        "Display",
+        "15.6-inch"
+      ],
+      [
+        "Product family",
+        "HP 15-da2000 series (15-da2xxx; exact variant to be confirmed)"
+      ],
+      [
+        "Operating system",
+        "Windows 11 Pro (installed and activated)"
+      ],
+      [
+        "Office software",
+        "Microsoft Office 2021 (installed and activated)"
+      ],
+      [
+        "Keyboard",
+        "Full-size keyboard with numeric keypad"
+      ],
+      [
+        "Connectivity",
+        "USB, HDMI and Ethernet"
+      ]
+    ],
+    "photos": [
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.19.jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.18.jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.19 (1).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.19 (2).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.19 (3).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.19 (4).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.20 (1).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.20 (2).jpeg",
+      "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.20.jpeg"
+    ]
+  },
 ];
 
 export function formatPrice(amount) {
