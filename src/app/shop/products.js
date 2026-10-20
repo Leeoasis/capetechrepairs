@@ -81,7 +81,7 @@ export const products = [
       "business-laptops"
     ],
     "finish": "Black",
-    "price": null,
+    "price": 3000,
     "status": "available",
     "description": "A compact, lightweight business laptop for work, studies and everyday multitasking, with 16 GB of memory and a portable 13.3-inch display.",
     "specs": [
@@ -126,7 +126,7 @@ export const products = [
       "everyday-laptops"
     ],
     "finish": "Black",
-    "price": null,
+    "price": 3500,
     "status": "available",
     "description": "A practical 15.6-inch laptop for study, office tasks and home use, with a 10th-generation Core i5 processor, NVMe SSD storage and a full-size keyboard.",
     "specs": [
@@ -184,7 +184,7 @@ export const products = [
       "everyday-laptops"
     ],
     "finish": "Silver / black",
-    "price": null,
+    "price": 4000,
     "status": "available",
     "description": "A 15.6-inch HP 15-series laptop for work, studies and home use, with a 10th-generation Core i7 processor, 16 GB of memory and NVMe SSD storage.",
     "specs": [
