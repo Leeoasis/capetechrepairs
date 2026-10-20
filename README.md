@@ -6,7 +6,7 @@ The `/shop` page uses `src/app/shop/products.js` as its product catalogue. Add p
 
 - Use `price: null` for products without a confirmed price. These show "Price on enquiry" and are excluded from the priced subtotal; the WhatsApp message requests a complete quote.
 - Assign each product a `categories` array using IDs from `productCategories` in the catalogue. Category counts and filters update automatically; a product can belong to multiple categories.
-- Each entry represents one pre-owned unit. The enquiry cart allows one of each unit.
+- The enquiry cart allows one of each listed product. For products with multiple units available, confirm the required quantity directly with the workshop. Use `label` and `purchaseNote` for product-specific condition and compatibility information.
 - Set `status` to `"sold"` when a unit sells, then commit and deploy. Sold units remain visible but cannot be added, and are removed from saved carts when the updated site loads.
 - Prices and availability come from the deployed catalogue; this is not live inventory or a reservation system.
 - The cart saves product IDs in the customer's browser. WhatsApp receives the current product names, prices, subtotal and collection or delivery preference only when the customer opens and sends the message.

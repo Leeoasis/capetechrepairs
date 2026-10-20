@@ -42,9 +42,9 @@ export default function Shop() {
       <header className="border-b border-slate-200 bg-white py-6 md:py-8">
         <div className="shell flex flex-col justify-between gap-4 md:flex-row md:items-center">
           <div>
-            <p className="eyebrow mb-2 text-[#668d1f]">Pre-owned technology</p>
+            <p className="eyebrow mb-2 text-[#668d1f]">Laptops & computer parts</p>
             <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">Shop Cape Tech</h1>
-            <p className="mt-2 text-sm leading-6 text-slate-600">Browse laptops, compare specs and enquire directly with our workshop.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">Browse laptops and components, compare specs and enquire directly with our workshop.</p>
           </div>
           <div className="shrink-0"><YouTubeLink /></div>
         </div>

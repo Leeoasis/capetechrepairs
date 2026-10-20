@@ -44,15 +44,16 @@ export default function ShopProducts({ productId = null, compact = false }) {
     `${subtotalLabel}: ${subtotal}`,
     ...(needsQuote ? ["Please quote the price-on-enquiry items separately and confirm the complete order total."] : []),
     `Preference: ${fulfilment}`,
-    "Please confirm condition and any faults, battery health, included accessories, warranty and return terms, and the final total including any delivery fee.",
+    "Please confirm condition and any faults, included accessories, warranty and return terms, and the final total including any delivery fee.",
+    ...(selected.some((product) => product.categories.includes("laptops")) ? ["For the selected laptops, please confirm battery health."] : []),
     "Please also confirm collection/inspection arrangements and EFT or cash payment options, and provide a written order confirmation and receipt.",
   ].join("\n");
 
   return (
     <section className={compact ? "py-7 md:py-8" : "py-16 md:py-24"} aria-labelledby="products-heading">
       <div className="shell">
-        {!compact && <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all laptops</Link> : "Shop laptops"}</p>}
-        {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className={compact ? "text-xl font-extrabold md:text-2xl" : "section-title"}>Find your next laptop.</h2>}
+        {!compact && <p className="section-kicker">{detailProduct ? <Link href="/shop" className="underline underline-offset-4">Back to all products</Link> : "Shop products"}</p>}
+        {detailProduct ? <h1 id="products-heading" className="section-title">{detailProduct.name}</h1> : <h2 id="products-heading" className={compact ? "text-xl font-extrabold md:text-2xl" : "section-title"}>Browse our products.</h2>}
         {!compact && <p className="mt-4 max-w-2xl leading-7 text-slate-600">Choose a product, review your selection and check availability with the workshop on WhatsApp. Payment is arranged directly after the details are confirmed.</p>}
         {!detailProduct && (
           <div className="mt-7">
@@ -88,7 +89,7 @@ export default function ShopProducts({ productId = null, compact = false }) {
                     <Image src={product.photos[0]} alt={`${product.finish} ${product.name}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-contain p-5 transition-transform group-hover:scale-105" />
                   </Link>
                   <div className="flex flex-1 flex-col p-5">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">Pre-owned laptop</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">{product.label || "Pre-owned laptop"}</p>
                     <h3 className="mt-2 text-xl font-extrabold"><Link href={`/shop/${product.id}`} className="hover:underline">{product.name}</Link></h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{product.specs.slice(0, 3).map(([, value]) => value).join(" / ")}</p>
                     <p className="mt-4 text-2xl font-black">{formatPrice(product.price)}</p>
@@ -106,7 +107,7 @@ export default function ShopProducts({ productId = null, compact = false }) {
                   <ProductGallery product={product} />
                   <div className="p-6 md:p-8">
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      <p className="eyebrow text-[#668d1f]">Pre-owned laptop · {product.finish}</p>
+                      <p className="eyebrow text-[#668d1f]">{product.label || "Pre-owned laptop"} · {product.finish}</p>
                       <span className={`rounded-full px-3 py-1 text-xs font-bold ${sold ? "bg-slate-100 text-slate-600" : "bg-[#eafbc9] text-[#456316]"}`}>{sold ? "Sold" : "Listed · confirm availability"}</span>
                     </div>
                     <h3 className="mt-3 text-3xl font-extrabold">{product.name}</h3>
@@ -121,7 +122,7 @@ export default function ShopProducts({ productId = null, compact = false }) {
                     </dl>
                     <div className="mb-6 rounded-xl bg-slate-50 p-4 text-sm leading-6 text-slate-600">
                       <p className="font-bold text-[#07111f]">Before you commit</p>
-                      <p>Photos show the listed laptop. Cosmetic condition, any faults, battery health, accessories and item-specific warranty and return terms still need confirmation from the workshop.</p>
+                      <p>{product.purchaseNote || "Photos show the listed laptop. Cosmetic condition, any faults, battery health, accessories and item-specific warranty and return terms still need confirmation from the workshop."}</p>
                     </div>
                     <button type="button" disabled={!ready || sold || added} className="btn-dark w-full disabled:cursor-default disabled:bg-slate-200 disabled:text-slate-600 sm:w-auto" onClick={() => {
                       setCart((current) => [...new Set([...current, product.id])]);
@@ -167,7 +168,7 @@ export default function ShopProducts({ productId = null, compact = false }) {
             </div>
           </aside>
         </div>
-        <noscript><p className="mt-6 rounded-xl bg-white p-6">To enquire without JavaScript, <a className="font-bold underline" href="https://wa.me/27648188737?text=Hi%20Cape%20Tech%2C%20please%20confirm%20pricing%20and%20availability%20for%20your%20listed%20laptops.">contact us on WhatsApp about our listed laptops</a> or call 064 818 8737.</p></noscript>
+        <noscript><p className="mt-6 rounded-xl bg-white p-6">To enquire without JavaScript, <a className="font-bold underline" href="https://wa.me/27648188737?text=Hi%20Cape%20Tech%2C%20please%20confirm%20pricing%20and%20availability%20for%20your%20listed%20products.">contact us on WhatsApp about our listed products</a> or call 064 818 8737.</p></noscript>
       </div>
     </section>
   );

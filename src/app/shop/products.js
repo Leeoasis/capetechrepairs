@@ -237,6 +237,85 @@ export const products = [
       "/images/products/hp-core-i7-10th-gen/WhatsApp Image 2026-10-19 at 02.24.20.jpeg"
     ]
   },
+  {
+    "id": "asus-tuf-gaming-a520m-plus-wifi",
+    "name": "ASUS TUF GAMING A520M-PLUS WIFI",
+    "categories": [
+      "displays-parts"
+    ],
+    "label": "Brand-new motherboard",
+    "finish": "Black",
+    "price": null,
+    "status": "available",
+    "description": "Brand-new, sealed micro-ATX motherboard for compatible AMD Ryzen PC builds and upgrades. Multiple units available, with original ASUS packaging and accessories included. Ask the workshop for a quote for your required quantity.",
+    "purchaseNote": "Brand new and sealed in box, with original packaging and accessories included. Confirm your CPU and BIOS compatibility, required quantity, price, warranty and return terms before purchase. Display outputs require a processor with integrated graphics.",
+    "specs": [
+      [
+        "Socket",
+        "AMD AM4"
+      ],
+      [
+        "Chipset",
+        "AMD A520"
+      ],
+      [
+        "Memory support",
+        "4 DDR4 DIMM slots, up to 128 GB (RAM not included)"
+      ],
+      [
+        "CPU support",
+        "Compatible AMD Ryzen processors, including Ryzen 5000 series; check ASUS CPU support list and required BIOS"
+      ],
+      [
+        "Form factor",
+        "Micro-ATX"
+      ],
+      [
+        "Wireless",
+        "Wi-Fi 5 (802.11ac) and Bluetooth 5.0"
+      ],
+      [
+        "Storage support",
+        "1 M.2 slot (PCIe 3.0 x4 NVMe / SATA) and 4 SATA 6 Gb/s ports"
+      ],
+      [
+        "Expansion",
+        "1 PCIe 3.0 x16 slot and 2 PCIe 3.0 x1 slots"
+      ],
+      [
+        "Display outputs",
+        "HDMI, DisplayPort and VGA (requires compatible CPU graphics)"
+      ],
+      [
+        "USB",
+        "USB 3.2 Gen 1 and USB 2.0"
+      ],
+      [
+        "Network",
+        "Gigabit Ethernet"
+      ],
+      [
+        "Lighting",
+        "ASUS Aura Sync RGB headers"
+      ],
+      [
+        "Condition",
+        "Brand new, sealed in box"
+      ],
+      [
+        "Included",
+        "Original ASUS packaging and accessories"
+      ],
+      [
+        "Stock",
+        "Multiple units available; confirm required quantity"
+      ]
+    ],
+    "photos": [
+      "/images/products/asus-tuf-gaming motherboard/WhatsApp Image 2026-10-20 at 09.54.41 (1).jpeg",
+      "/images/products/asus-tuf-gaming motherboard/WhatsApp Image 2026-10-20 at 09.54.41.jpeg"
+    ]
+  },
 ];
 
 export function formatPrice(amount) {
