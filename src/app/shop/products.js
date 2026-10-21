@@ -245,7 +245,7 @@ export const products = [
     ],
     "label": "Brand-new motherboard",
     "finish": "Black",
-    "price": null,
+    "price": 3000,
     "status": "available",
     "description": "Brand-new, sealed micro-ATX motherboard for compatible AMD Ryzen PC builds and upgrades. Multiple units available, with original ASUS packaging and accessories included. Ask the workshop for a quote for your required quantity.",
     "purchaseNote": "Brand new and sealed in box, with original packaging and accessories included. Confirm your CPU and BIOS compatibility, required quantity, price, warranty and return terms before purchase. Display outputs require a processor with integrated graphics.",
